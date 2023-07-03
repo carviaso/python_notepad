@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pythondjangobdsendmail:
+    image: pythondjangobdsendmail
+    build:
+      context: .
+      dockerfile: ./Dockerfile

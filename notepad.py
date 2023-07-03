@@ -12,7 +12,7 @@ style = Style(theme="journal")
 style = ttk.Style()
 
 # Coionfigure the tab font to be bold
-style.configure("TNotebook.Tab", font=("TKDefaultFont",14, "bold"))
+style.configure("TNotebook.Tab", font=("TKDefaultFont", 14, "bold"))
 
 # Create the notebook to hold the notes
 notebook = ttk.Notebook(root, style="TNotebook")
@@ -20,7 +20,7 @@ notebook = ttk.Notebook(root, style="TNotebook")
 # Load saved notes
 notes = {}
 try:
-    with open("notes.json","r") as f:
+    with open("notes.json", "r") as f:
         notes = json.load(f)
 except FileNotFoundError:
     pass
@@ -28,6 +28,7 @@ except FileNotFoundError:
 # Create the notebook to hold the notes
 notebook = ttk.Notebook(root)
 notebook.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+
 
 # Create a function to add a new note
 def add_note():
@@ -47,6 +48,7 @@ def add_note():
     
     content_entry = tk.Text(note_frame, width=40, height=10)
     content_entry.grid(row=1, column=1, padx=10, pady=10)
+    
     
     # Create a function to save the note
     def save_note():
@@ -71,7 +73,9 @@ def add_note():
     save_button = ttk.Button(note_frame, text="Save",
                              command=save_note, style="secondary.TButton")
     save_button.grid(row=2, column=1, padx=10, pady=10)
-    
+
+
+
 def load_notes():
     try:
         with open("notes.json","r") as f:
@@ -88,6 +92,7 @@ def load_notes():
 
 # Call the load_notes functin when the app starts
 load_notes()
+
 
 # Create a funtin to delete a note
 def delete_note():

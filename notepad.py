@@ -49,7 +49,6 @@ def add_note():
     content_entry = tk.Text(note_frame, width=40, height=10)
     content_entry.grid(row=1, column=1, padx=10, pady=10)
 
-
     # Create a function to save the note
     def save_note():
         # Get the title and content of the note

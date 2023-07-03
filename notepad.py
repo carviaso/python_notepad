@@ -88,6 +88,7 @@ def load_notes():
         # If the files does not exist, do nothing
         pass
 
+
 # Call the load_notes functin when the app starts
 load_notes()
 
@@ -114,6 +115,7 @@ def delete_note():
         # Save the notes dictionary to the file
         with open("notes.json", "w") as f:
             json.dump(notes, f)
+
 
 # Add buttons to th main windows
 new_button = ttk.Button(root, text="New Note",

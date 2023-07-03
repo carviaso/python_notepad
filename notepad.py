@@ -60,7 +60,7 @@ def add_note():
         notes[title] = content.strip()
 
         # Save the notes dictionary to the file
-        with open("notes.json","w") as f:
+        with open("notes.json", "w") as f:
             json.dump(notes, f)
 
         # Add the note to the notebook
@@ -77,7 +77,7 @@ def add_note():
 
 def load_notes():
     try:
-        with open("notes.json","r") as f:
+        with open("notes.json", "r") as f:
             notes = json.load(f)
 
         for title, content in notes.items():
@@ -113,7 +113,7 @@ def delete_note():
         notes.pop(note_title)
 
         # Save the notes dictionary to the file
-        with open("notes.json","w") as f:
+        with open("notes.json", "w") as f:
             json.dump(notes, f)
 
 # Add buttons to th main windows

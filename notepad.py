@@ -123,7 +123,7 @@ new_button = ttk.Button(root, text="New Note",
 new_button.pack(side=tk.LEFT, padx=10, pady=10)
 
 delete_button = ttk.Button(root, text="Delete",
-                        command=delete_note, style="primary.TButton")
+                           command=delete_note, style="primary.TButton")
 delete_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
 root.mainloop()

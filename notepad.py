@@ -1,4 +1,4 @@
-import tkinter as tk 
+import tkinter as tk
 from tkinter import ttk, messagebox
 import json
 from ttkbootstrap import Style
@@ -35,21 +35,21 @@ def add_note():
     # Create a new tab for the note
     note_frame = ttk.Frame(notebook, padding=10)
     notebook.add(note_frame, text="New Note")
-    
+
     # Create entry widgets fot title and content of the note3
     title_label = ttk.Label(note_frame, text="Title:")
     title_label.grid(row=0, column=0, padx=10, pady=10, sticky="W")
-    
+
     title_entry = ttk.Entry(note_frame, width=40)
     title_entry.grid(row=0, column=1, padx=10, pady=10)
-    
+
     content_label = ttk.Label(note_frame, text="Content:")
     content_label.grid(row=1, column=0, padx=10, pady=10, sticky="W")
-    
+
     content_entry = tk.Text(note_frame, width=40, height=10)
     content_entry.grid(row=1, column=1, padx=10, pady=10)
-    
-    
+
+
     # Create a function to save the note
     def save_note():
         # Get the title and content of the note
@@ -58,29 +58,28 @@ def add_note():
 
         # Add the note to the notes dictionary
         notes[title] = content.strip()
-        
+
         # Save the notes dictionary to the file
         with open("notes.json","w") as f:
             json.dump(notes, f)
-        
+
         # Add the note to the notebook
         note_context = tk.Text(notebook, width=40, height=10)
         note_context.insert(tk.END, content)
         notebook.forget(notebook.select())
         notebook.add(note_context, text=title)
-        
+
     # Add a save button to the note frame
     save_button = ttk.Button(note_frame, text="Save",
                              command=save_note, style="secondary.TButton")
     save_button.grid(row=2, column=1, padx=10, pady=10)
 
 
-
 def load_notes():
     try:
         with open("notes.json","r") as f:
             notes = json.load(f)
-        
+
         for title, content in notes.items():
             # Add the note to the notebook
             note_content = tk.Text(notebook, width=40, height=10)
@@ -98,21 +97,21 @@ load_notes()
 def delete_note():
     # Get th current tab index
     current_tab = notebook.index(notebook.select())
-    
+
     # Get the tile of the notes to be deleted
     note_title = notebook.tab(current_tab, "text")
-    
+
     # Show a confitmation dialog
     confirm = messagebox.askyesno("Delete Note",
                                   f"Are you sure wou want to delte {note_title}?")
-    
+
     if confirm:
         # Remove the note from th notebook
         notebook.forget(current_tab)
-        
+
         # Remove the note from the notes dictionary
         notes.pop(note_title)
-        
+
         # Save the notes dictionary to the file
         with open("notes.json","w") as f:
             json.dump(notes, f)

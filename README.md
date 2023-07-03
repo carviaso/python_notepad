@@ -1,4 +1,4 @@
-# Proyecto Django Para Administrar Universidad 
+# Proyecto Note Taking App 
 
 Mayor informacion en [Build a Simple Note-Taking App using Python & Tkinter | Tutorial](https://www.youtube.com/watch?v=NZbxcxRRFjU)
 

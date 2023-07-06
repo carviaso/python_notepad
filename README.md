@@ -2,7 +2,7 @@
 
 Mayor informacion en [Build a Simple Note-Taking App using Python & Tkinter | Tutorial](https://www.youtube.com/watch?v=NZbxcxRRFjU)
 
-## Iniciar el Virtual Enviroment de Pytho
+## Iniciar el Virtual Enviroment de Python
 ```
 python -m venv env
 .\env\Scripts\activate
